@@ -1,0 +1,48 @@
+POST http://localhost:1234/users
+Content-Type: application/json
+
+{}
+
+> {%
+client.test("Request executed successfully", function() {
+    client.assert(response.status === 201, "Respone status in not 201")
+});
+%}
+
+###
+PUT http://localhost:1234/users/1
+Content-Type: application/json
+
+{}
+
+> {%
+client.test("Request executed successfully", function() {
+    client.assert(response.status === 204, "Respone status in not 204")
+});
+%}
+
+###
+
+PATCH http://localhost:1234/users/3
+Content-Type: application/json
+
+{}
+
+> {%
+client.test("Request executed successfully", function() {
+    client.assert(response.status === 204, "Respone status in not 204")
+});
+%}
+
+###
+
+DELETE http://localhost:1234/users/1
+Content-Type: application/json
+
+{}
+
+> {%
+client.test("Request executed successfully", function() {
+    client.assert(response.status === 204, "Respone status in not 204")
+});
+%}
